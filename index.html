@@ -90,23 +90,23 @@
       </div>
     </div>
     <script type="text/javascript">
-      setTimeout(function() {
+      setTimeout(function () {
         document.getElementById("loading").classList.add("animated");
         document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
+        setTimeout(function () {
+            document.getElementById("loading").classList.remove("animated");
+            document.getElementById("loading").classList.remove("fadeOut");
+            document.getElementById("loading").style.display = "none";
         }, 800);
-      }, 1500);
-      $.getJSON("blog.json", function(blog) {
+    }, 1500);
+    $.getJSON("blog.json", function (blog) {
         blog = blog || [];
         if (blog.length == 0) {
-          return (document.getElementById("blog_section").style.display =
-            "none");
+            return (document.getElementById("blog_section").style.display =
+                "none");
         }
         for (var i = 0; i < blog.length; i++) {
-          $("#blogs").append(`
+            $("#blogs").append(`
             <a href="./blog/${blog[i].url_title}/" target="_blank">
                 <section>
                     <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
@@ -120,9 +120,9 @@
             </a>
             `);
         }
-      }).fail(function() {
+    }).fail(function () {
         return (document.getElementById("blog_section").style.display = "none");
-      });
+    });
     </script>
 
     <script>
